@@ -73,7 +73,6 @@ function App() {
           <h3>Blog Title 1</h3>
           <p>Test para</p>
         </div>
-      </div>
     </div>
   );
 }

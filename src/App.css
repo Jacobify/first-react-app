@@ -28,6 +28,13 @@
   color: #61dafb;
 }
 
+.BlogCard {
+    margin : "16px";
+    border-radius : "5px";
+    box-shadow: "5px 5px 5px #421"
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
