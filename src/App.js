@@ -2,77 +2,44 @@
 import './App.css';
 
 function App() {
-  const firstName = "Farzad";
-  const lastName = "Yaghoobi";
-  const inputPlaceHolder = "Enter your details"
-  const myArray = [0,1,2,3]
-  const myObject = {age : 35,name : "Fat Gum"}
-  const getFullName = (firstName,lastName) => `${firstName} ${lastName}`;
-  const styles = {
-    margin : "16px",
-    borderRadius : "5px",
-    boxShadow: "5px 5px 5px #421"
-  }
+  // const firstName = "Farzad";
+  // const lastName = "Yaghoobi";
+  // const inputPlaceHolder = "Enter your details"
+  // const myArray = [0,1,2,3]
+  // const myObject = {age : 35,name : "Fat Gum"}
+  // const getFullName = (firstName,lastName) => `${firstName} ${lastName}`;
+  // const styles = {
+  //   margin : "16px",
+  //   borderRadius : "5px",
+  //   boxShadow: "5px 5px 5px #421"
+  // }
+  const blogArr = [
+    {
+      title:"Blog Title 1",
+      description: "lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor"
+    },
+    {
+      title:"Blog Title 2",
+      description: "lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor"
+    },
+    {
+      title:"Blog Title 3",
+      description: "lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor"
+    }
+];  
+  const blogCards = blogArr.map((blog,index)=>{ console.log(blog);
+    return(
+      <div className="BlogCard" key={index}>
+        <h3>{blog.title}</h3>
+        <p>{blog.description}</p>
+      </div>
+    )
+  
+  })
+
   return (
     <div className="App">
-      <div style={
-        {
-          margin : "16px",
-          borderRadius : "5px",
-          boxShadow: "5px 5px 5px #421"
-        }
-      }>
-        <h3>Full Name : {getFullName(firstName,lastName)}</h3>
-        <p>Job : {myArray[1]}</p>
-        <p>Age : {myObject.age}</p>
-        <input placeholder={inputPlaceHolder}/>
-        {
-          myArray[2] > 0  ? "True" : "False"
-        }
-        <h3>Blog Title 1</h3>
-        <p>Test para</p>
-      </div>
-      <div style={styles}>
-        <h3>Full Name : {getFullName(firstName,lastName)}</h3>
-        <p>Job : {myArray[1]}</p>
-        <p>Age : {myObject.age}</p>
-        <input placeholder={inputPlaceHolder}/>
-        {
-          myArray[2] > 0  ? "True" : "False"
-        }
-        <h3>Blog Title 1</h3>
-        <p>Test para</p>
-      </div>
-    
-      <div className="BlogCard"></div>
-        <div style={
-          {
-            margin : "16px",
-            borderRadius : "5px",
-            boxShadow: "5px 5px 5px #421"
-          }
-        }>
-          <h3>Full Name : {getFullName(firstName,lastName)}</h3>
-          <p>Job : {myArray[1]}</p>
-          <p>Age : {myObject.age}</p>
-          <input placeholder={inputPlaceHolder}/>
-          {
-            myArray[2] > 0  ? "True" : "False"
-          }
-          <h3>Blog Title 1</h3>
-          <p>Test para</p>
-        </div>
-        <div style={styles}>
-          <h3>Full Name : {getFullName(firstName,lastName)}</h3>
-          <p>Job : {myArray[1]}</p>
-          <p>Age : {myObject.age}</p>
-          <input placeholder={inputPlaceHolder}/>
-          {
-            myArray[2] > 0  ? "True" : "False"
-          }
-          <h3>Blog Title 1</h3>
-          <p>Test para</p>
-        </div>
+      {blogCards}
     </div>
   );
 }
