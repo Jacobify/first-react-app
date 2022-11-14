@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import BlogCard from './BlogCard';
 
 function App() {
   // const firstName = "Farzad";
@@ -29,10 +30,11 @@ function App() {
 ];  
   const blogCards = blogArr.map((blog,index)=>{ console.log(blog);
     return(
-      <div className="BlogCard" key={index}>
-        <h3>{blog.title}</h3>
-        <p>{blog.description}</p>
-      </div>
+      <BlogCard key={index}/>
+      // <div className="BlogCard" key={index}>
+      //   <h3>{blog.title}</h3>
+      //   <p>{blog.description}</p>
+      // </div>
     )
   
   })
