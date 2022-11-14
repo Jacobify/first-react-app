@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import BlogCard from './BlogCard';
+import {isArrayEmpty as arrayValueCheck} from "./Utils"
 
 function App() {
   // const firstName = "Farzad";
@@ -28,7 +29,7 @@ function App() {
       description: "lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor"
     }
 ];  
-  const blogCards = blogArr.map((blog,index)=>{
+  const blogCards = arrayValueCheck(blogArr) ? [] : blogArr.map((blog,index)=>{
     return(
       <BlogCard key={index} title={blog.title} description={blog.description} id={index}/>
       // <div className="BlogCard" key={index}>
