@@ -1,10 +1,11 @@
 import React from "react"
 
-const BlogCard = () => {
+const BlogCard = (props) => {
+    console.log(props);
     return (
         <div className="BlogCard">
-            <h3>Blog title</h3>
-            <p>Blog description</p>
+            <h3>{props.title}</h3>
+            <p>{props.description}</p>
         </div>
     )
 }

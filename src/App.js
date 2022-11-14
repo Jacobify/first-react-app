@@ -28,9 +28,9 @@ function App() {
       description: "lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor"
     }
 ];  
-  const blogCards = blogArr.map((blog,index)=>{ console.log(blog);
+  const blogCards = blogArr.map((blog,index)=>{
     return(
-      <BlogCard key={index}/>
+      <BlogCard key={index} title={blog.title} description={blog.description} id={index}/>
       // <div className="BlogCard" key={index}>
       //   <h3>{blog.title}</h3>
       //   <p>{blog.description}</p>
