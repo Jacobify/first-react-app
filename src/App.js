@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import BlogCard from './BlogCard';
 import {isArrayEmpty as arrayValueCheck} from "./Utils"
 
@@ -31,7 +31,7 @@ function App() {
 ];  
   const blogCards = arrayValueCheck(blogArr) ? [] : blogArr.map((blog,index)=>{
     return(
-      <BlogCard key={index} title={blog.title} description={blog.description} id={index}/>
+      <BlogCard key={index} title={blog.title} description={blog.description} id={index} />
       // <div className="BlogCard" key={index}>
       //   <h3>{blog.title}</h3>
       //   <p>{blog.description}</p>
