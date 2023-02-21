@@ -8,6 +8,6 @@
 @media (min-width: 992px) {
     .BlogCard {
         width: 45%;
-        display: inline-block;
+        display: block;
     }
 }
