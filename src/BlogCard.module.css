@@ -5,6 +5,11 @@
     background-color:lightblue;
 }
 
+.likeCount {
+    font-weight: 600;
+    font-size: 22px;
+}
+
 @media (min-width: 992px) {
     .BlogCard {
         width: 45%;

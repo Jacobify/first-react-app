@@ -17,6 +17,30 @@ class App extends Component {
   //   boxShadow: "5px 5px 5px #421"
   // }
 
+  onHideBtnClick = () => {
+    // this.showBlogs = false;
+    // let updatedState = !this.state.showBlogs;
+    // this.setState({showBlogs:updatedState})
+
+    //-----------------------
+
+    this.setState((prevState,prevProps)=>{
+      return { showBlogs: !prevState.showBlogs}
+    })
+
+    //-----------------------
+    // this.setState({showBlogs:false})
+    console.log('====================================');
+    console.log(this.state.showBlogs);
+    console.log('====================================');
+  }
+  onLikeBtnClick = () => {
+    // this.setState((prevState,prevProp)=>{
+    //     return {likeCount: prevState.likeCount + 1};
+    // }
+    // )
+    alert("like button is clicked!")
+  }
   state = {
     showBlogs : true
   }
@@ -24,20 +48,24 @@ class App extends Component {
   blogArr = [
    {
      title:"Blog Title 1",
-     description: "lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor"
+     description: "lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor",
+     likeCount :0
    },
    {
      title:"Blog Title 2",
-     description: "lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor"
+     description: "lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor",
+     likeCount :0
    },
    {
      title:"Blog Title 3",
-     description: "lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor"
+     description: "lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor lorem impsum dolor",
+     likeCount :0
    }
   ];
+
   blogCards = arrayValueCheck(this.blogArr) ? [] : this.blogArr.map((blog,index)=>{
    return(
-     <BlogCard key={index} title={blog.title} description={blog.description} id={index} />
+     <BlogCard key={index} likeCount={blog.likeCount} title={blog.title} description={blog.description} id={index} onLikeBtnClick={this.onLikeBtnClick}/>
      // <div className="BlogCard" key={index}>
      //   <h3>{blog.title}</h3>
      //   <p>{blog.description}</p>
@@ -46,18 +74,13 @@ class App extends Component {
   })
 
 
-  onHideBtnClick = () => {
-    // this.showBlogs = false;
-    this.setState({showBlogs:false})
-    console.log('====================================');
-    console.log(this.state.showBlogs);
-    console.log('====================================');
-  }
+
 
   render() {
+    console.log("render is called!");
     return(
       <div className="App">
-        <button onClick={this.onHideBtnClick}>Hide List</button>
+        <button onClick={this.onHideBtnClick}>{this.state.showBlogs ?"Hide List" : "Show List"}</button>
         {
           this.state.showBlogs ? this.blogCards : null
         }
